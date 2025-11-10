@@ -37,6 +37,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
+    # Third party
+    'rest_framework',
+    'django_filters',  # ADD THIS LINE
+    'django_celery_beat',
+    'django_celery_results',
+    
+    # Local apps
+    'conversations',
+    'analysis',
 ]
 
 MIDDLEWARE = [
@@ -76,7 +86,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': 'db.sqlite3',
     }
 }
 
@@ -152,9 +162,11 @@ REST_FRAMEWORK = {
     ],
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 20,
+    'DEFAULT_RENDERER_CLASSES': [
+        'rest_framework.renderers.JSONRenderer',
+    ]
 }
-
-# ============ CELERY CONFIG (DATABASE BROKER) ============
+# ============ CELERY CONFIG ============
 CELERY_BROKER_URL = 'sqla+sqlite:///db.sqlite3'
 CELERY_RESULT_BACKEND = 'db+sqlite:///db.sqlite3'
 CELERY_ACCEPT_CONTENT = ['json']
@@ -168,26 +180,6 @@ CELERY_BEAT_SCHEDULE = {
         'schedule': 86400.0,  # Every 24 hours
     },
 }
-# ============ DATABASE CONFIG ============
-# For SQLite (default):
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'db.sqlite3',
-    }
-}
-
-# For PostgreSQL (uncomment when ready):
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'conversation_analysis',
-#         'USER': 'postgres',
-#         'PASSWORD': 'your_password',
-#         'HOST': 'localhost',
-#         'PORT': '5432',
-#     }
-# }
 
 # ============ LOGGING CONFIG ============
 LOGGING = {
