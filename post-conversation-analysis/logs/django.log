@@ -333,3 +333,27 @@ django.template.exceptions.TemplateDoesNotExist: django_filters/rest_framework/f
 "GET /api/messages/ HTTP/1.1" 500 121777
 C:\Users\Vivek\Desktop\post-conversation-analysis\config\settings.py changed, reloading.
 Watching for file changes with StatReloader
+Not Found: /
+"GET / HTTP/1.1" 404 2163
+"GET /api HTTP/1.1" 301 0
+"GET /api/ HTTP/1.1" 200 158
+"GET /api/conversations/ HTTP/1.1" 200 370
+"GET /api/ HTTP/1.1" 200 158
+"GET /api/conversations/ HTTP/1.1" 200 370
+"GET /api/conversations/ HTTP/1.1" 200 370
+"GET /api/ HTTP/1.1" 200 158
+"POST /api/conversations/batch-create/ HTTP/1.1" 201 480
+"POST /api/conversations/1/analyze/ HTTP/1.1" 200 460
+"GET /api/analysis/ HTTP/1.1" 200 512
+"GET /api/conversations/ HTTP/1.1" 200 531
+"GET /api/analysis/ HTTP/1.1" 200 512
+"GET /api/conversations/ HTTP/1.1" 200 531
+"POST /api/conversations/batch-create/ HTTP/1.1" 201 1034
+"GET /api/analysis/ HTTP/1.1" 200 512
+"POST /api/conversations/1/analyze/ HTTP/1.1" 200 460
+"GET /api/analysis/ HTTP/1.1" 200 512
+"GET /api/conversations/ HTTP/1.1" 200 690
+"POST /api/conversations/1/analyze/ HTTP/1.1" 200 460
+"POST /api/conversations/2/analyze/ HTTP/1.1" 201 460
+"POST /api/conversations/3/analyze/ HTTP/1.1" 201 424
+"GET /api/analysis/ HTTP/1.1" 200 1398
