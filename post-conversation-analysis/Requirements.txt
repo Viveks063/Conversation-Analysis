@@ -6,7 +6,6 @@ textblob==0.17.1
 celery==5.3.4
 django-celery-beat==2.5.0
 django-celery-results==2.5.1
-redis==5.0.1
-psycopg2-binary==2.9.9
-gunicorn==21.2.0
+sqlalchemy==2.0.23
 django-filter==23.5
+gunicorn==21.2.0
